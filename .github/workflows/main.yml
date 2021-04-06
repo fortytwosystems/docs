@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install pip dependencies
+        run: pip install git+https://github.com/bashtage/sphinx-material.git
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: make html
