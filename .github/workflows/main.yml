@@ -31,7 +31,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run sphinx-build
         run: sphinx-build -b html . ./docs
-      
+        
+      - name: Create .nojekyll file
+        run: |
+          touch .nojekyll
+          touch docs/.nojekyll
+          
       - name: Push to gh-pages branch
         run: |
           git init
