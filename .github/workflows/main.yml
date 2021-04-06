@@ -29,8 +29,8 @@ jobs:
         run: pip install git+https://github.com/bashtage/sphinx-material.git
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: make html
+      - name: Run sphinx-build
+        run: sphinx-build -b html . ./docs
       
       - name: Push to gh-pages branch
         run: |
