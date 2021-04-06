@@ -31,6 +31,15 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: make html
+      
+      - name: Push to gh-pages branch
+        run: |
+          git init
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add .
+          git commit -m "Automatic gh-pages build ${GITHUB_RUN_NUMBER}"
+          git push --force https://github.com/fortytwosystems/docs.git main:gh-pages
 
 
 
