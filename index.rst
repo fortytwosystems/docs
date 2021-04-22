@@ -5,3 +5,4 @@ Welcome to FortyTwo Systems Docs!
     :maxdepth: 1
 
     testing/index
+    tools/ArduinoModule-CMSIS
