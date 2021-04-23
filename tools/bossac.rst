@@ -1,4 +1,4 @@
-ArduinoModule-CMSIS
+bossac
 ==============================================
 .. image:: https://img.shields.io/badge/version-5.7.0-brightgreen
 
