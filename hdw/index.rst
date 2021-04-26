@@ -1,7 +1,7 @@
-Arduino IDE Examples
+Hardware
 =================================================
 
 .. toctree::
     :maxdepth: 1
 
-    basics
+    mega
