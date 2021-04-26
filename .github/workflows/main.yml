@@ -36,6 +36,7 @@ jobs:
         run: |
           touch .nojekyll
           touch docs/.nojekyll
+          echo 'docs.fortytwosystems.com' > CNAME
           
       - name: Push to gh-pages branch
         run: |
