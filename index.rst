@@ -7,3 +7,5 @@ Welcome to FortyTwo Systems Docs!
     testing/index
     tools/ArduinoModule-CMSIS
     tools/ArduinoModule-CMSIS-Microchip
+    tools/bossac
+    tools/ArduinoModule-gcc-arm-none-eabi

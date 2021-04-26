@@ -1,93 +1,50 @@
-bossac
+BOSSAC
 ==============================================
-.. image:: https://img.shields.io/badge/version-5.7.0-brightgreen
+.. image:: https://img.shields.io/badge/version-v1.9.1--fortytwo--0-brightgreen
 
-https://github.com/fortytwosystems/ArduinoModule-CMSIS
+https://github.com/fortytwosystems/BOSSA
 
-ArduinoModule-CMSIS contains the ARM CMSIS (Cortex Microcontroller Software Interface Standard) 
-codebase. See https://developer.arm.com/tools-and-software/embedded/cmsis for more info. Along with
-ArduinoModule-CMSIS-Microchip (the vendor-specific stuff), this module forms the backbone of the Arduino SAMC
-core.
+BOSSAC (the command line version of BOSSA) is the tool that is used to flash firmware onto SAM 
+microcontrollers via the bootloader. FortyTwo Systems has its own version of this utility which 
+includes support for the SAMC21/SAMC21N microcontrollers.
 
 Build process
 -------------
 
-.. note::
-    The following build process has only been tested on Windows 10 x86 systems. Your mileage may vary with other
-    OS's and architectures.
-
 Prerequisites
 +++++++++++++
 
-Start by cloning the repository. You must use the --recursive option to grab the CMSIS_5 repo.
+Start by cloning the repository. You don't need to have wxWidgets installed on your system since you're only building the CLI.
 
 .. code-block:: bash
 
-    git clone --recursive https://github.com/fortytwosystems/ArduinoModule-CMSIS.git
+    git clone https://github.com/fortytwosystems/BOSSA.git
 
-You'll also need to grab the gcc-arm-none-eabi compiler from 
-https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads.
-We used the 10-2020-q4-major for these instructions. Install it.
+Compile BOSSAC
++++++++++++++++++++++
 
-You'll need an environment to build in. We used mingw64. Install it if you don't already have it.
-
-DSP Libraries
-+++++++++++++
-CMSIS contains a number of different DSP libraries, but they don't come pre-compiled for the Cortex-M0+ platform.
-You will need to build them. Start by creating a build folder under CMSIS_5/CMSIS/DSP. Go into the folder and create 
-a CMakeLists.txt file with the following contents:
-
-.. code-block:: cmake
-
-    cmake_minimum_required (VERSION 3.14)
-    # Define the project
-    project (buildcmsisdsp VERSION 0.1)
-
-    # Define the path to CMSIS-DSP
-    set(DSP ${CMAKE_CURRENT_SOURCE_DIR})
-
-    # Add DSP folder to module path
-    list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
-    list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Source)
-
-    ########### 
-    #
-    # CMSIS DSP
-    #
-
-    # Load CMSIS-DSP definitions. Libraries will be built in bin_dsp
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Source bin_dsp)
-
-Save the file and run this from the build folder:
+Navigate into the BOSSA folder. To build the program, run 
 
 .. code-block:: bash
+    
+    make arduino HOST=hostname
 
-    cmake   -DROOT="../../../.." \
-            -DCMAKE_TOOLCHAIN_FILE="../gcc.cmake" \
-            -DARM_CPU="cortex-m0plus" \
-            -DCMAKE_C_COMPILER="C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major/bin/arm-none-eabi-gcc.exe" \
-            -DCMAKE_CXX_COMPILER="C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major/bin/arm-none-eabi-gcc.exe" \
-            -DCMAKE_MAKE_PROGRAM="make" \ 
-            -G "Unix Makefiles" ..
+Fill "hostname" according to the following list:
 
-ROOT should be the path to the CMSIS_5 folder.
+- ARM Linux 32-bit (arm-linux-gnueabihf),
+- ARM Linux 64-bit (aarch64-linux-gnu),
+- macOS 64-bit (x86_64-apple-darwin),
+- Windows (i686-mingw32),
+- Linux 32-bit (i686-linux-gnu),
+- Linux 64-bit (x86_64-linux-gnu)
 
-Finally, run:
-
-.. code-block:: bash
-
-    make VERBOSE=1
+To override the version coded into the Makefile, add :code:`VERSION=version` to the above command
 
 Finishing Up
 ++++++++++++
 
-Go back to the ArduinoModule-CMSIS folder and package everything up by running 
-
-.. code-block:: bash
-    
-    make all
-
-This should compress relevant files into a tar.bz2 file, and create a package_CMSIS_5.7.0_index.json file which is needed for the Arduino 
-package manager. These two files can be uploaded to the file server for download by the Arduino IDE/CLI.
-
-(FortyTwo Systems Internal) tag the release with a "v", followed by the CMSIS version number. 
+There should now be a compressed (.tar.bz2) binary in the BOSSA folder, as well as a file 
+named :code:`package_bossac_1.9.1-fortytwo-0_hostname_index.json`. Copy and paste the relevant lines 
+from that file into the json that should 
+have come with the repo. Once you've compiled across all your target operating systems, you
+can upload the compressed binaries plus the single json file to your file server.

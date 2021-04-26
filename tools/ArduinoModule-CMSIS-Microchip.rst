@@ -42,7 +42,7 @@ Package everything up by running
     
     make all
 
-This should compress relevant files into a tar.bz2 file, and create a package_CMSIS-Microchip_VERSION_index.json file which is needed for the Arduino 
+This should compress relevant files into a :code:`tar.bz2` file, and create a :code:`package_CMSIS-Microchip_VERSION_index.json` file which is needed for the Arduino 
 package manager. These two files can be uploaded to the file server for download by the Arduino IDE/CLI.
 
 (FortyTwo Systems Internal) tag the release with a "v", followed by the latest version number. 

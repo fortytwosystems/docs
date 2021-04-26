@@ -34,8 +34,8 @@ You'll need an environment to build in. We used mingw64. Install it if you don't
 DSP Libraries
 +++++++++++++
 CMSIS contains a number of different DSP libraries, but they don't come pre-compiled for the Cortex-M0+ platform.
-You will need to build them. Start by creating a build folder under CMSIS_5/CMSIS/DSP. Go into the folder and create 
-a CMakeLists.txt file with the following contents:
+You will need to build them. Start by creating a build folder under :code:`CMSIS_5/CMSIS/DSP`. Go into the folder and create 
+a :code:`CMakeLists.txt` file with the following contents:
 
 .. code-block:: cmake
 
@@ -87,7 +87,7 @@ Go back to the ArduinoModule-CMSIS folder and package everything up by running
     
     make all
 
-This should compress relevant files into a tar.bz2 file, and create a package_CMSIS_5.7.0_index.json file which is needed for the Arduino 
+This should compress relevant files into a tar.bz2 file, and create a :code:`package_CMSIS_5.7.0_index.json` file which is needed for the Arduino 
 package manager. These two files can be uploaded to the file server for download by the Arduino IDE/CLI.
 
 (FortyTwo Systems Internal) tag the release with a "v", followed by the CMSIS version number. 
