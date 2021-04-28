@@ -7,7 +7,7 @@ https://github.com/fortytwosystems/ArduinoModule-gcc-arm-none-eabi
 ArduinoModule-gcc-arm-none-eabi is the module containing the compilers/linkers/etc for ARM embedded 
 applications. Everything is pre-compiled, but there is no 32-bit linux ARM edition available without compilation.
 
-Build process
+Build Process
 -------------
 
 On the Raspberry Pi, running 32-bit raspbian, download the latest source tarball from https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads

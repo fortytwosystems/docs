@@ -6,7 +6,7 @@ https://github.com/fortytwosystems/ArduinoCore-samc
 
 ArduinoCore-samc contains the core files for Arduino samc support of FortyTwo systems boards.
 
-Build process
+Build Process
 -------------
 
 Start by cloning the repository. The recursive option is currently only mandatory if you plan to run scripts in the :code:`testing` folder

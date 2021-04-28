@@ -9,7 +9,7 @@ ArduinoModule-CMSIS-Microchip contains the Microchip vendor-specific ARM CMSIS
 ArduinoModule-CMSIS (the non-vendor-specific stuff), this module forms the 
 backbone of the Arduino SAMC core.
 
-Build process
+Build Process
 -------------
 
 .. note::
@@ -27,7 +27,7 @@ The build process for this module is much simpler than ArduinoModule-CMSIS. Star
 
 You'll need an environment to build in. We used mingw64. Install it if you don't already have it.
 
-Adding processors
+Adding Processors
 +++++++++++++++++
 
 Go to https://packs.download.microchip.com/ and find the processor that you'd like to add. Copy the contents of the archive 

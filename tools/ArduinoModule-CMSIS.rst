@@ -9,7 +9,7 @@ codebase. See https://developer.arm.com/tools-and-software/embedded/cmsis for mo
 ArduinoModule-CMSIS-Microchip (the vendor-specific stuff), this module forms the backbone of the Arduino SAMC
 core.
 
-Build process
+Build Process
 -------------
 
 .. note::

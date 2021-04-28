@@ -1,9 +1,8 @@
-Welcome to FortyTwo Systems Docs!
+Get Started
 =================================================
 
 .. toctree::
     :maxdepth: 1
 
-    start/index
-    hdw/index
-    tools/index
+    arduino-ide
+    arduino-cli

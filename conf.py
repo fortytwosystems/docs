@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'FortyTwo Systems Docs'
-copyright = '2021, Dave'
-author = 'Dave'
+copyright = '2021, FortyTwo Systems'
+author = 'FortyTwo Systems'
 
 
 # -- General configuration ---------------------------------------------------
@@ -74,8 +74,8 @@ html_theme_options = {
     'base_url': 'https://fortytwosystems.com/docs',
 
     # Set the color and the accent color
-    'color_primary': 'blue',
-    'color_accent': 'light-blue',
+    'color_primary': 'green',
+    'color_accent': 'light-green',
 
     # Visible levels of the global TOC; -1 means unlimited
     'globaltoc_depth': 3,
