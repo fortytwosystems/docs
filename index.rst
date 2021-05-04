@@ -5,5 +5,6 @@ Welcome to FortyTwo Systems Docs!
     :maxdepth: 1
 
     start/index
+    libraries/index
     hdw/index
     tools/index
