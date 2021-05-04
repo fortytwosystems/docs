@@ -15,6 +15,7 @@ consists of the following components:
   with support for SAMC21 processors.
 
 Additionally, FortyTwo Systems maintains a full configuration for PlatformIO:
+
 - `platform-atmelsam <platform-atmelsam.html>`_:
 
 .. toctree::

@@ -13,9 +13,6 @@ Here's some tips to make sure your baord stays safe:
 - Make sure you always handle the board by its edges. This will protect the sensitive electronics on the board.
 - Never plug in the board while it is on a conductive surface or touching anything metal. This will destroy your board.
 
-Subpages
-++++++++++++++++++++
-
 .. toctree::
     :maxdepth: 1
 
